@@ -10,6 +10,9 @@ bauen. Sie sehen dann aus wie mit der offiziellen Vorlage gemacht.
 
 *Inoffiziell: Dies ist kein Projekt des Digital Independence Day.*
 
+Überblick und Beispiel zum Herunterladen:
+<https://bmmmm.github.io/did-theme-template/>
+
 ## Was drin ist
 
 - **Farben** der Vorlage als Theme-Palette der PPTX: Gelb `#F8C662`, Lila
@@ -114,7 +117,12 @@ Sonst setzt LibreOffice eine andere Schrift ein, und Texte brechen anders um.
 ```bash
 pnpm install
 pnpm test        # baut das Beispiel mit und ohne Logo und prüft Palette, Master, Sprechblase, Fußzeile
+scripts/build-site.sh _site && scripts/check-site.sh _site   # die Pages-Seite lokal bauen und prüfen
 ```
+
+Die Seite unter `site/` geht bei jedem Push auf `main` über
+`.github/workflows/pages.yml` auf GitHub Pages, zusammen mit dem Vorschaubild
+und dem frisch gebauten Beispiel ohne Logo.
 
 Im Einsatz für den Vortrag „Passwörter und Zwei-Faktor – einfach sicher“:
 <https://bmmmm.github.io/talks/did-passwordmanagers-2026/>

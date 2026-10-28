@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>did-theme-template – DIDAY-Theme für pptxgenjs</title>
+<meta name="description" content="DIDAY-Theme für pptxgenjs: Farben, Schrift und Masterfolien nach der Präsentationsvorlage des Digital Independence Day.">
+<link rel="canonical" href="https://bmmmm.github.io/did-theme-template/">
+<style>
+  :root {
+    --gelb: #F8C662; --lila: #595082; --blau: #4E46DC; --gruen: #2E9361;
+    --text: #1D1D1B; --hell: #EFEDF7; --grau: #6B6787;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--text); background: #fff; line-height: 1.55;
+    font-family: "Noto Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  header { background: var(--gelb); padding: 3rem 0 2.5rem; }
+  header h1 { margin: 0 0 .5rem; color: var(--lila); font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; }
+  header p { margin: 0; font-size: 1.15rem; max-width: 42rem; }
+  .wrap { max-width: 60rem; margin: 0 auto; padding-left: 1.25rem; padding-right: 1.25rem; }
+  main { padding-top: 2rem; padding-bottom: 3rem; }
+  h2 { color: var(--lila); margin: 2.5rem 0 .75rem; }
+  img.vorschau { width: 100%; height: auto; border: 1px solid var(--hell); border-radius: .5rem; display: block; }
+  figcaption { color: var(--grau); font-size: .9rem; margin-top: .4rem; }
+  .knoepfe { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+  .knopf {
+    display: inline-block; padding: .6rem 1.1rem; border-radius: .4rem; font-weight: 700;
+    text-decoration: none; background: var(--lila); color: #fff;
+  }
+  .knopf.zweit { background: #fff; color: var(--lila); border: 2px solid var(--lila); }
+  .knopf:focus-visible, a:focus-visible { outline: 3px solid var(--blau); outline-offset: 2px; }
+  a { color: var(--blau); }
+  ul.farben { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: .75rem; }
+  ul.farben li { border: 1px solid var(--hell); border-radius: .4rem; overflow: hidden; font-size: .9rem; }
+  ul.farben span { display: block; height: 3rem; }
+  ul.farben code { display: block; padding: .35rem .5rem; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--hell); vertical-align: top; }
+  th { color: var(--lila); }
+  pre { background: var(--hell); padding: 1rem; border-radius: .4rem; overflow-x: auto; font-size: .9rem; }
+  code { font-family: ui-monospace, "Noto Sans Mono", Menlo, Consolas, monospace; }
+  .hinweis { border-left: 4px solid var(--gruen); padding: .25rem 0 .25rem 1rem; }
+  footer { background: var(--lila); color: #fff; padding: 1.5rem 0; font-size: .9rem; }
+  footer a { color: var(--gelb); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>did-theme-template</h1>
+    <p>DIDAY-Theme für <a href="https://gitbrent.github.io/PptxGenJS/">pptxgenjs</a>: Farben, Schrift und
+      Masterfolien nach der Präsentationsvorlage des
+      <a href="https://di.day/">Digital Independence Day</a>. Damit lassen sich DI-Day-Vorträge als Code
+      schreiben und als PowerPoint und PDF bauen.</p>
+    <div class="knoepfe">
+      <a class="knopf" href="beispiel.pptx" download>Beispiel herunterladen (PPTX)</a>
+      <a class="knopf zweit" href="https://github.com/bmmmm/did-theme-template">Quellcode auf GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <figure style="margin:0">
+    <img class="vorschau" src="vorschau.png" width="1614" height="912"
+         alt="Die vier Masterfolien: Titel auf Gelb und Lila, Kernaussage in grün umrandeter Sprechblase, helle Inhaltsfolie mit gelbem Kopfband, dunkle Inhaltsfolie auf Lila">
+    <figcaption>Die vier Masterfolien aus dem Beispiel, ohne Logo.</figcaption>
+  </figure>
+
+  <h2>Farben</h2>
+  <ul class="farben">
+    <li><span style="background:#F8C662"></span><code>accent1 F8C662</code></li>
+    <li><span style="background:#595082"></span><code>dk2 595082</code></li>
+    <li><span style="background:#4E46DC"></span><code>accent2 4E46DC</code></li>
+    <li><span style="background:#2E9361"></span><code>accent4 2E9361</code></li>
+    <li><span style="background:#C8443F"></span><code>accent3 C8443F</code></li>
+    <li><span style="background:#EFEDF7"></span><code>lt2 EFEDF7</code></li>
+    <li><span style="background:#D6D2EE"></span><code>accent5 D6D2EE</code></li>
+    <li><span style="background:#6B6787"></span><code>accent6 6B6787</code></li>
+  </ul>
+  <p>Die Palette landet als Theme der PPTX. <code>pres.SchemeColor.accent1</code> usw. zeigen also auf die
+    DIDAY-Farben. Schrift für Überschriften und Text ist Noto Sans.</p>
+
+  <h2>Masterfolien</h2>
+  <table>
+    <thead><tr><th>Master</th><th>Aussehen</th><th>Platzhalter</th></tr></thead>
+    <tbody>
+      <tr><td><code>TITEL</code></td><td>oben Gelb mit großem Logo, unten Lila</td><td><code>title</code>, <code>body</code>, <code>quelle</code></td></tr>
+      <tr><td><code>AUSSAGE</code></td><td>Kernaussage in grün umrandeter Sprechblase auf Gelb</td><td><code>title</code>, <code>body</code>, <code>quelle</code></td></tr>
+      <tr><td><code>INHALT</code></td><td>weiß, gelbes Kopfband mit Titel und Einleitung</td><td><code>title</code>, <code>lead</code>, <code>quelle</code></td></tr>
+      <tr><td><code>INHALT_DUNKEL</code></td><td>wie <code>INHALT</code>, aber auf Lila</td><td><code>title</code>, <code>lead</code>, <code>quelle</code></td></tr>
+    </tbody>
+  </table>
+  <p>Alle vier im Format 16:9, mit der Fußzeile der Vorlage: Datum links, Text in der Mitte, Seitenzahl rechts.</p>
+
+  <h2>Benutzen</h2>
+  <pre><code>pnpm add pptxgenjs sharp github:bmmmm/did-theme-template</code></pre>
+  <pre><code>const pptxgen = require("pptxgenjs");
+const did = require("did-theme-template");
+
+(async () => {
+  const pres = new pptxgen();
+  await did.setup(pres, { date: "01.11.2026", footer: "Datenburg &amp; Brotfabrik", logo: "diday-logo.svg" });
+
+  const s = pres.addSlide({ masterName: did.MASTER.INHALT });
+  s.addText("Was macht ein Passwortmanager?", { placeholder: "title" });
+  s.addText("Stell ihn dir vor wie einen Tresor.", { placeholder: "lead" });
+
+  await pres.writeFile({ fileName: "vortrag.pptx" });
+  await did.finish("vortrag.pptx"); // Farbpalette und Sprechblase
+})();</code></pre>
+  <p><code>did.setup</code> kommt vor das erste <code>addSlide</code>, <code>did.finish</code> nach
+    <code>writeFile</code>. Mehr steht in der
+    <a href="https://github.com/bmmmm/did-theme-template#readme">README</a>.</p>
+
+  <h2>Logo</h2>
+  <p class="hinweis">Das DIDAY-Logo ist nicht enthalten. Es gehört dem Digital Independence Day und steht nicht
+    unter einer offenen Lizenz. Wer die offizielle Vorlage hat, übergibt das Logo daraus als <code>logo</code>
+    an <code>setup</code>. Ohne Logo bleiben die Plätze frei.</p>
+
+  <h2 lang="en">English</h2>
+  <p lang="en">Unofficial pptxgenjs theme that reproduces the slide template of Germany's Digital Independence
+    Day: palette, Noto Sans and four slide masters with the template's footer. The DIDAY logo is not included;
+    pass your own copy via <code>logo</code>.</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    Inoffiziell: Dies ist kein Projekt des Digital Independence Day. Name und Logo „DIDAY“ gehören dem Digital
+    Independence Day. Code unter <a href="https://github.com/bmmmm/did-theme-template/blob/main/LICENSE">Apache-2.0</a>.
+  </div>
+</footer>
+</body>
+</html>
