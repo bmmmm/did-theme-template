@@ -1,0 +1,32 @@
+{
+  "name": "did-theme-template",
+  "version": "0.1.0",
+  "description": "DIDAY-Theme für pptxgenjs: Farben, Schrift und Masterfolien nach der Präsentationsvorlage des Digital Independence Day",
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "main": "did-theme-template.js",
+  "files": [
+    "did-theme-template.js"
+  ],
+  "keywords": [
+    "pptxgenjs",
+    "powerpoint",
+    "slides",
+    "theme",
+    "di.day",
+    "digital-independence-day"
+  ],
+  "scripts": {
+    "preinstall": "node -e \"if(process.env.INIT_CWD&&process.env.INIT_CWD!==process.cwd())process.exit(0);const ua=process.env.npm_config_user_agent||'';if(!ua.startsWith('pnpm/')){console.error('\\n  did-theme-template is pnpm-only (supply-chain policy). Use: pnpm install - npm/yarn are blocked.\\n');process.exit(1)}\"",
+    "test": "node --test test/*.test.js",
+    "beispiel": "node beispiel/beispiel.js"
+  },
+  "peerDependencies": {
+    "pptxgenjs": ">=4",
+    "sharp": ">=0.33"
+  },
+  "devDependencies": {
+    "pptxgenjs": "^4.0.1",
+    "sharp": "^0.35.5"
+  }
+}
